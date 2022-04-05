@@ -18,14 +18,14 @@ RUN go mod download
 # Copy the code into the container
 COPY . .
 
-# Build avalanchego and plugins
-RUN ./scripts/build.sh
+# Build avalanchego
+RUN ./scripts/build_avalanche.sh
 
 # ============= Cleanup Stage ================
 FROM debian:11-slim AS execution
 
 # Maintain compatibility with previous images
-RUN mkdir -p /avalanchego/build
+RUN mkdir -p /avalanchego/build/plugins
 WORKDIR /avalanchego/build
 
 # Copy the executables into the container
