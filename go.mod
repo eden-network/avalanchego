@@ -9,6 +9,8 @@ module github.com/ava-labs/avalanchego
 // go.mod (here, only major.minor can be specified)
 go 1.16
 
+replace github.com/ava-labs/coreth => ../coreth
+
 require (
 	github.com/Microsoft/go-winio v0.4.16
 	github.com/NYTimes/gziphandler v1.1.1
